@@ -45,5 +45,13 @@ pub fn read_file(file_name: &str) -> String {
     s
 }
 fn main() {
-    println!("{}", read_file("/index.html"));
+    //println!("{}", read_file("/index.html"));
+    let s = "aiueo";
+    let t = {
+        let mut s = self.chars();
+        s.next();
+        s.as_str()
+    };
+    println!("{}", t);
+
 }
