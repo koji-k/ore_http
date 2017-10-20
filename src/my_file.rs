@@ -3,6 +3,9 @@ use std::fs::File;
 use std::io::prelude::*;
 use std::path::Path;
 
+// TODO 当然コマンドラインからオプションで指定できるように。
+const DOCUMENT_ROOT: &str = "/home/koji/work/html/";
+
 pub fn read_file(file_name: &str) -> String {
 
     let chars = file_name.chars().collect::<Vec<char>>();
@@ -15,7 +18,7 @@ pub fn read_file(file_name: &str) -> String {
         file_name = "index.html".to_string();
     }
 
-    let path = &format!("{}{}", "/home/koji/work/html/", file_name);
+    let path = &format!("{}{}", DOCUMENT_ROOT, file_name);
     let path = Path::new(path);
     let mut file = match File::open(&path) {
         Err(e) => {
